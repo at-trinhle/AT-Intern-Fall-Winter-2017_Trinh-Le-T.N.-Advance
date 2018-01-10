@@ -3,16 +3,17 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { HellowordComponent} from './helloword.component';
 
 
 @NgModule({
-  declarations: [
-    AppComponent
+  declarations: [ 
+    HellowordComponent, AppComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [HellowordComponent]
 })
 export class AppModule { }
