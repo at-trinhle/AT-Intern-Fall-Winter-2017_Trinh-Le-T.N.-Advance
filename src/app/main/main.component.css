@@ -1,0 +1,9 @@
+.main-content {
+  background-color: red;
+  position: relative;
+}
+button {
+  position: absolute;
+  margin-top: 5%;
+  left: 50%;
+}

@@ -1,0 +1,21 @@
+<h1>Hello word</h1>
+<h2>My name is {{ name1 }}</h2>
+<input type="text" #getname>
+<button (click)="getData(getname.value)">Click me!</button>
+<button on-click='myMethod($event)'>Test</button>
+<input type="text" [(ngModel)]='firstname'>
+<input type="text" [(ngModel)]='lastname'>
+<p>{{ firstname }} {{ lastname }}</p>
+<div ng-app="">
+  <ul>
+    <li class="menu-item" *ngFor = "let hero of heroName">
+      <a href="#">{{ hero }}</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="menu-item-2" *ngFor = "let hero of heroName">
+      <p *ngIf = 'hero.length < 4 '>This is name have length < 4:<a href="#"> {{ hero }}</a></p>
+    </li>
+  </ul>
+  <p ng-non-bindable>This code is not compiled by AngularJS: {{ 5+5 }}</p>
+</div>
