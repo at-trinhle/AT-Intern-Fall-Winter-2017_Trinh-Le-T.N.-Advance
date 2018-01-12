@@ -1,9 +1,10 @@
 .main-content {
-  background-color: red;
-  position: relative;
+  display: block;
+  border: 1px solid lightblue;
 }
 button {
-  position: absolute;
-  margin-top: 5%;
-  left: 50%;
+  margin: 3% 48% 3%;
 }
+/* mat-grid-tile {
+  background-color: red;
+} */
