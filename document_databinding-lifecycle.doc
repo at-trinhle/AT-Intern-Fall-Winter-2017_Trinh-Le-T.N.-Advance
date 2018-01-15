@@ -1,0 +1,18 @@
+1. Using 2-way data binding:
+- Databinding is a process of communication that is performed between component (business logic) and view (html) code.
+- Two-way data binding combines the input and output binding into a single notation using the ngModel directive.
+  [property] = "value"
+  (event) = "handler"
+  [(ng-model)] = "property"
+- To create your own component that supports two-way binding, you must define an @Output property to match an @Input.
+2. Component  Lifecycle:
+- constructor, ngOnChanges, ngOnInit, ngDoCheck, ngAfterContentInit, ngAfterContentChecked, ngAfterViewInit, ngAfterViewChecked, ngOnDestroy
++ After creating a component/directive by calling its constructor.
++ ngOnChanges(): Respond when Angular (re)sets data-bound input properties. The method receives a SimpleChanges object of current and previous property values. Called before ngOnInit() and whenever one or more data-bound input properties change.
++ ngOnInit(): called once the component is initialized.
++ ngDoCheck(): called during every change detection run.
++ ngAfterContentInit(): after component content initialized.
++ ngAfterContentChecked(): called every time projected content has been checked.
++ ngAfterViewInit(): called after the component's view has been initialized.
++ ngAfterViewChecked(): called every time the view have been checked.
++ ngOnDestroy(): called once the component is about to be destroy.
