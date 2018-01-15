@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HellowordComponent} from './helloword/helloword.component';
-import { HighlightDirective } from './highlight/highlight.directive';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainComponent } from './main/main.component';
@@ -15,8 +14,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 @NgModule({
   declarations: [ 
     HellowordComponent, 
-    AppComponent, 
-    HighlightDirective, 
+    AppComponent,
     HeaderComponent,
     SidebarComponent,
     MainComponent
