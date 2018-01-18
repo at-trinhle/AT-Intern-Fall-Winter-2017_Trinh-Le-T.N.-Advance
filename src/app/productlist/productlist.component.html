@@ -1,7 +1,10 @@
 <section>
   <ul class="product-list">
-      <ng-container *ngFor="let product of data">
-        <li class="product-item" [productItem]="product" (click)="information(product.id)"></li>
-      </ng-container>
+    <li *ngFor= "let product of getProducts" (click)="information(product.id)" class="product-item">
+      <h2>{{ product.name }}</h2>
+      <img src="../assets/images/{{ product.image }}" alt="image">
+      <p> {{ product.price }}</p>
+      <button>See more</button>
+    </li>
   </ul>
 </section>

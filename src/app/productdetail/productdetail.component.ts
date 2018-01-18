@@ -6,21 +6,10 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['productdetail.component.css']
 })
 export class ProductDetailComponent {
-  private _dataDetail;
-
-  @Input()
-  set dataDetail(dataDetail: any) {
-    this._dataDetail = dataDetail;
-  }
-
-  get dataDetail(): any {
-    return this._dataDetail;
-  }
-
+  @Input() dataDetail: any;
   constructor() {
   }
 
   ngOnInit() {
-    console.log(this.dataDetail);
   }
 }

@@ -6,18 +6,23 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './productlist/productlist.component';
 import { ProductDetailComponent } from './productdetail/productdetail.component';
 import { ProductItemDirective } from './directive/productitem.directive';
+import { PricePipe } from './pipe/price.pipe';
+import { ExampleService } from './service/example.service';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [ 
     AppComponent,
     ProductListComponent,
     ProductDetailComponent,
-    ProductItemDirective
+    ProductItemDirective,
+    PricePipe,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [ ExampleService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

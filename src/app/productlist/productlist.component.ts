@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { ExampleService } from '../service/example.service'; 
 
 @Component ({
   selector: 'product-list',
@@ -6,19 +7,23 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['productlist.component.css']
 })
 export class ProductListComponent {
-  @Input() data: Array<any>;
   @Output() detail = new EventEmitter<any>();
-  constructor() {
+
+  public getProducts: any[];
+
+  constructor( private exampleService: ExampleService) {
   }
   ngOnInit() {
-    // console.log(this.data);
+    //this.listdata = this.exampleService.dataService;
+    this.exampleService.getList().subscribe((response: any)=>{
+      this.getProducts = response;
+    });
   }
   information(dataId: number) {
-    let listSP = this.data;
-    for(let i of listSP) {
+    let listPR = this.getProducts;
+    for(let i of listPR) {
       if(i.id === dataId) {
         this.detail.emit(i);
-        //console.log(i);
       }
     }
   }
