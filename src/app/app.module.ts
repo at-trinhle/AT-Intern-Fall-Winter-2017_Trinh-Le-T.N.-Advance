@@ -3,17 +3,21 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { HellowordComponent} from './helloword.component';
-
+import { ProductListComponent } from './productlist/productlist.component';
+import { ProductDetailComponent } from './productdetail/productdetail.component';
+import { ProductItemDirective } from './directive/productitem.directive';
 
 @NgModule({
   declarations: [ 
-    HellowordComponent, AppComponent
+    AppComponent,
+    ProductListComponent,
+    ProductDetailComponent,
+    ProductItemDirective
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [HellowordComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

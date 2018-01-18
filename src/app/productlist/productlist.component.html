@@ -1,0 +1,7 @@
+<section>
+  <ul class="product-list">
+      <ng-container *ngFor="let product of data">
+        <li class="product-item" [productItem]="product" (click)="information(product.id)"></li>
+      </ng-container>
+  </ul>
+</section>
