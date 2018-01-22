@@ -1,0 +1,25 @@
+<section class="fill-info" *ngIf="inforPage">
+  <h3>Fill Album infomation:</h3>
+  <form [formGroup]="infoForm" novalidate (ngSubmit)="onSubmit()">
+    <label>Name:</label>
+    <input type="text" formControlName="name" formControlName="name">
+    <p *ngIf="infoForm.controls.name.invalid">Name not allow empty.</p>
+    <div formGroupName="author">
+      <label>Author:</label>
+      <input type="text" placeholder="Name" formControlName="nameAuthor">
+      <input type="text" placeholder="Phone" formControlName="phone">
+      <input type="email" placeholder="Email" formControlName="email">
+    </div>
+    <div formGroupName="types">
+      <label>Types:</label>
+      <input type="radio" value="computer" formControlName="type"/>Computer
+      <input type="radio" value="youtube" formControlName="type"/>Youtube
+    </div>
+    <div>
+      <label>Files:</label>
+      <input type="file" value="device">
+      <input type="text">
+    </div>
+    <input type="submit" value="Submit"/>
+  </form>
+</section>

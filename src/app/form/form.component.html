@@ -1,0 +1,10 @@
+<section class="login">
+  <form action="" #myForm="ngForm" (ngSubmit)="loginUser(myForm)" class="form-login" novalidate>
+    <h2>Login form:</h2>
+    <label class="user">User:</label>
+    <input class="inp-user" type="text" name="user" ngModel required #user="ngModel">
+    <label class="pw">Password:</label>
+    <input class="inp-pw" type="password" name="password" ngModel required #passsword="ngModel">
+    <input type="submit" [disabled]="!myForm.valid" value="Login">
+  </form>
+</section>
