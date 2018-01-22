@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
- 
+  loginSucess: boolean = false;
   movePage: any;
   constructor() {}
   ngOnInit() {
@@ -14,5 +14,8 @@ export class AppComponent {
   }
   FillData(event: any) {
     this.movePage = event;
+    if(this.movePage) {
+      this.loginSucess = true;
+    }
   }
 }

@@ -1,25 +1,32 @@
 <section class="fill-info" *ngIf="inforPage">
-  <h3>Fill Album infomation:</h3>
+  <h3>Fill Album Infomation:</h3>
   <form [formGroup]="infoForm" novalidate (ngSubmit)="onSubmit()">
     <label>Name:</label>
-    <input type="text" formControlName="name" formControlName="name">
-    <p *ngIf="infoForm.controls.name.invalid">Name not allow empty.</p>
+    <input type="text" formControlName="name">
+    <p *ngIf="infoForm.controls.name.invalid">Name not allow empty, minLength = 3 !!!</p>
     <div formGroupName="author">
       <label>Author:</label>
       <input type="text" placeholder="Name" formControlName="nameAuthor">
+      <p *ngIf="infoForm.controls.author.controls.nameAuthor.invalid">Name Author not allow empty and min length is 3!</p>
       <input type="text" placeholder="Phone" formControlName="phone">
+      <p *ngIf="infoForm.controls.author.controls.phone.invalid">Phone not allow empty and must be use number type!</p>
       <input type="email" placeholder="Email" formControlName="email">
+      <p *ngIf="infoForm.controls.author.controls.email.invalid">The email must be in the correct format @gmail.com!</p>
     </div>
-    <div formGroupName="types">
+    <div>
       <label>Types:</label>
       <input type="radio" value="computer" formControlName="type"/>Computer
       <input type="radio" value="youtube" formControlName="type"/>Youtube
     </div>
-    <div>
+    <div class="choose-type" formGroupName="files">
       <label>Files:</label>
-      <input type="file" value="device">
-      <input type="text">
+      <input *ngIf="infoForm.controls.type.value === 'computer'" type="file" formControlName="computer" (change)="test($event)">
+      <div *ngIf="infoForm.controls.type.value === 'youtube'">
+        <input type="text" formControlName="youtube" placeholder="Link youtube">
+        <p *ngIf="infoForm.controls.files.controls.youtube.invalid">Link must start with: https://www.youtube.com/ </p>
+      </div>
     </div>
-    <input type="submit" value="Submit"/>
+    <input [disabled]="infoForm.controls.files.controls.computer.invalid" type="submit" value="Submit"/>
+    <!-- <input [disabled]="infoForm.controls.files.controls.computer.invalid && (infoForm.controls.type.value === 'computer' && !checkFiles)" type="submit" value="Submit"/> -->
   </form>
 </section>
