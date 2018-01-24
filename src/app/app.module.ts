@@ -10,6 +10,23 @@ import { PricePipe } from './pipe/price.pipe';
 import { ExampleService } from './service/example.service';
 import { HttpModule } from '@angular/http';
 
+import { RouterModule, Routes } from '@angular/router';
+
+  const routes: Routes  = [
+    { 
+      path: 'products',  
+      component: ProductListComponent
+    },
+    // {
+    //   path: '',
+    //   redirectTo: 'products',
+    //   pathMatch: 'full'
+    // },
+    { 
+      path: 'product-detail/:id', 
+      component: ProductDetailComponent 
+    }
+  ];
 @NgModule({
   declarations: [ 
     AppComponent,
@@ -20,7 +37,9 @@ import { HttpModule } from '@angular/http';
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(routes)
+
   ],
   providers: [ ExampleService ],
   bootstrap: [AppComponent]

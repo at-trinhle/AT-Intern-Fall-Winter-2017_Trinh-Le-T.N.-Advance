@@ -1,2 +1,4 @@
-<product-list (detail)="showDetail($event)"></product-list>
-<product-detail [dataDetail]="sendData"></product-detail>
+<!-- <product-list (detail)="showDetail($event)"></product-list>
+<product-detail [dataDetail]="sendData"></product-detail> -->
+<a [routerLink]="['products']" routerLinkActive="active">Product list</a>
+<router-outlet></router-outlet>

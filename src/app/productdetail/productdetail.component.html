@@ -1,6 +1,6 @@
-<section class="detail-product" *ngIf="dataDetail">
-  <h2>{{ dataDetail.name }}</h2>
-  <img src="../assets/images/{{ dataDetail.image }}" alt="">
-  <p>Price: {{ dataDetail.price | price:'Price will be update soon!' }}</p>
-  <p>Description: {{ dataDetail.description}}</p>
+<section class="detail-product" *ngIf="oneProduct">
+  <h2>{{ oneProduct.name }}</h2>
+  <img src="../assets/images/{{ oneProduct.image }}" alt="">
+  <p>Price: {{ oneProduct.price | price:'Price will be update soon!' }}</p>
+  <p>Description: {{ oneProduct.description}}</p>
 </section>
