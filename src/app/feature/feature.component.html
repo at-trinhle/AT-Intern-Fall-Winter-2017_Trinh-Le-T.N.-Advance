@@ -9,7 +9,7 @@
       <input type="text" placeholder="Name" formControlName="nameAuthor">
       <p *ngIf="infoForm.controls.author.controls.nameAuthor.invalid">Name Author not allow empty and min length is 3!</p>
       <input type="text" placeholder="Phone" formControlName="phone">
-      <p *ngIf="infoForm.controls.author.controls.phone.invalid">Phone not allow empty and must be use number type!</p>
+      <p *ngIf="infoForm.controls.author.controls.phone.invalid">Phone not allow empty, At least 10 characters and must be use number type!</p>
       <input type="email" placeholder="Email" formControlName="email">
       <p *ngIf="infoForm.controls.author.controls.email.invalid">The email must be in the correct format @gmail.com!</p>
     </div>
@@ -20,13 +20,12 @@
     </div>
     <div class="choose-type" formGroupName="files">
       <label>Files:</label>
-      <input *ngIf="infoForm.controls.type.value === 'computer'" type="file" formControlName="computer" (change)="test($event)">
-      <div *ngIf="infoForm.controls.type.value === 'youtube'">
-        <input type="text" formControlName="youtube" placeholder="Link youtube">
-        <p *ngIf="infoForm.controls.files.controls.youtube.invalid">Link must start with: https://www.youtube.com/ </p>
+      <div *ngFor="let file of infoForm.controls.files.controls; let i = index">
+        <input type="text" [formControlName]="i" placeholder="{{ linksPlaceholder }}">
+        <p *ngIf="file.invalid">{{ errorInfo}}</p>
       </div>
+      <input type="button" value="Add" (click)="newFile()">
     </div>
-    <input [disabled]="infoForm.controls.files.controls.computer.invalid" type="submit" value="Submit"/>
-    <!-- <input [disabled]="infoForm.controls.files.controls.computer.invalid && (infoForm.controls.type.value === 'computer' && !checkFiles)" type="submit" value="Submit"/> -->
+    <input [disabled]="infoForm.invalid" type="submit" value="Submit"/>
   </form>
 </section>

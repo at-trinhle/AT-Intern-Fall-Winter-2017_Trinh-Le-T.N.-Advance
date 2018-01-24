@@ -10,5 +10,9 @@ export function CheckGmail(gmail: AbstractControl) {
   if(!gmail.value.endsWith('@gmail.com')) {
     return { validGmail : true};
   }
-  return null;
+}
+export function ValidateComputer(local: AbstractControl) {
+  if(!(local.value.endsWith('.mp3') || local.value.endsWith('.mp4'))) {
+    return { computer: true};
+  }
 }
