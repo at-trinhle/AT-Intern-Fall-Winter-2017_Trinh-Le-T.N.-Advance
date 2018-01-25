@@ -1,0 +1,33 @@
+.list-news {
+  margin: 20px;
+}
+.news-list-menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+.new-item {
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px #aaaaaa;
+  width: 32%;
+  margin: 0 0 10px;
+  img {
+    width: 90%;
+  }
+  .title-new {
+    font-size: 18px;
+    padding: 10px;
+  }
+  .custom-btn {
+    margin: 10px;
+    font-size: 15px;
+    padding: 10px 20px;
+    border: 1px solid goldenrod;
+    border-radius: 5px;
+    background: goldenrod;
+    color: black;
+  }
+}

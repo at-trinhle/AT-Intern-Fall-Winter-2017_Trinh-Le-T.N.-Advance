@@ -1,0 +1,9 @@
+<section class="list-news">
+  <ul class="news-list-menu">
+    <li class="new-item" *ngFor="let new of getListNews">
+      <h2 class="title-new">{{new.title}}</h2>
+      <img src="assets/images/{{new.img}}" alt="image-information">
+      <button class="custom-btn" routerLink="/news/detail/{{new.id}}">Detail</button>
+    </li>
+  </ul>
+</section>

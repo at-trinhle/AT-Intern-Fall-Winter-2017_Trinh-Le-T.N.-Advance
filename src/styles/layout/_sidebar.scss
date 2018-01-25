@@ -1,0 +1,14 @@
+.leftbar-content {
+  width: 20%;
+  float: left;
+  border: 1px solid gainsboro;
+  h3 {
+    font-size: 20px;
+  }
+  .icon-leftbar {
+    font-size: 30px;
+  }
+  mat-list-item {
+    padding-bottom: 5px;
+  }
+}

@@ -1,0 +1,21 @@
+.form-page {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 30px;
+  font-size: 20px;
+  margin: 20px 100px;
+  input {
+    width: 70%;
+    margin: 10px 40px 10px;
+    height: 30px;
+    font-size: 16px;
+    padding: 0 10px;
+    border-radius: 5px;
+  }
+  .phone {
+    margin-left: 3px;
+  }
+  .email {
+    margin-left: 38px;
+  }
+}

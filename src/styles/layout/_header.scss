@@ -1,0 +1,11 @@
+.header-app {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.row-header {
+  justify-content: space-between;
+}
+.icon-home {
+  font-size: 30px;
+}

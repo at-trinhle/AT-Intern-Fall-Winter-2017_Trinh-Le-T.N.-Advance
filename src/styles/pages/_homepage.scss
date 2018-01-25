@@ -1,0 +1,17 @@
+.content-homepage {
+  padding: 20px;
+  font-size: 18px;
+  .title-home {
+    font-size: 25px;
+    padding: 0 0 5px;
+  }
+  .title-overview {
+    font-size: 20px;
+  }
+  .overview-item {
+    margin: 0 20px;
+  }
+  mat-divider {
+    padding: 5px 0;
+  }
+}
